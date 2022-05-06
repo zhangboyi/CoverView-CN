@@ -48,7 +48,7 @@ const Info = () => {
                     <h1 className="text-2xl text-purple-400 ">Coverview</h1>
                 </div>
 
-                <h1 className="text-center md:text-6xl text-3xl font-extrabold text-gray-700 ">让为你的博客创建封面图片变得超级容易</h1>
+                <h1 className="text-center md:text-6xl text-3xl font-extrabold text-gray-700 ">让为博客创建封面图片变得超级容易</h1>
                 <a href="https://github.com/thedavidweng/CoverView-CN" target="_blank" rel="noreferrer" className="bg-gray-700 text-white p-2 px-6 rounded text-xl flex my-10 hover:bg-gray-800 mx-auto w-max">⭐ 在 Github 上点个星星</a>
             </div>
 
