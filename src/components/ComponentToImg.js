@@ -16,7 +16,7 @@ class ComponentToImg extends React.Component {
 				<div ref={this.componentRef}>{this.props.children}</div>
 				<button
 					className="border p-2 bg-gray-700 hover:bg-gray-800 text-white text-xl rounded m-4 px-4"
-					onClick={() => exportComponentAsPNG(this.componentRef, 'cover')}>Download</button>
+					onClick={() => exportComponentAsPNG(this.componentRef, 'cover')}>下载</button>
 			</React.Fragment>
 		);
 	}

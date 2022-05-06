@@ -6,11 +6,11 @@ import RandomTheme from './RandomTheme';
 // import resetIcon from '../assets/icons/reset.svg'
 
 const defaultSettings = {
-	title: "How I built my first project with react",
+	title: "如何使用 React 构建我的第一个项目",
 	bgColor: "#dcd6f7",
 	pattern: "",
 	download: "PNG",
-	author: 'Rutik Wankhade',
+	author: 'Rutik Wankhade & David Weng',
 	icon: { 'label': 'react', 'value': 'react' },
 	devIconOptions: {},
 	font: 'font-sans',
@@ -79,7 +79,7 @@ class Editor extends React.Component {
 
 					<div className="flex items-center mb-4 ">
 						<h1 className=" text-gray-800 text-2xl font-bold ">Coverview</h1>
-						<a href="https://github.com/rutikwankhade/CoverView"
+						<a href="https://github.com/thedavidweng/CoverView-CN"
 							target="_blank" rel="noopener  noreferrer"
 							className="ml-auto mr-2 cursor-pointer">
 							<i className=" devicon-github-plain dev-icon text-xl"></i>
@@ -88,18 +88,18 @@ class Editor extends React.Component {
 
 					</div>
 					<div className="m-2 flex flex-col">
-						<span className="font-medium">Blog Title</span>
+						<span className="font-medium">博客标题</span>
 						<textarea
 							type="text"
 							value={this.state.title}
-							placeholder="Enter title here"
+							placeholder="在此输入标题"
 							className="border text-gray-700 text-xl rounded  p-2 h-24"
 							onChange={(e) => this.setState({ title: e.target.value })}
 						/>
 					</div>
 
 					<div className="flex flex-col m-2 ">
-						<span className="font-medium">Author</span>
+						<span className="font-medium">作者</span>
 						<input
 							type="text"
 							value={this.state.author}
@@ -114,7 +114,7 @@ class Editor extends React.Component {
 					<div className="flex items-center">
 
 						<div className="flex flex-col m-2 w-1/2">
-							<span className="font-medium">Font</span>
+							<span className="font-medium">字体</span>
 
 							<select
 								value={this.state.font}
@@ -128,7 +128,7 @@ class Editor extends React.Component {
 							</select>
 						</div>
 						<div className="flex flex-col m-2 ">
-							<span className="font-medium">Color</span>
+							<span className="font-medium">颜色</span>
 							<div className="border rounded flex items-center p-2">
 
 								<span className="text-sm text-gray-700 font-semibold mx-2">{this.state.bgColor}</span>
@@ -147,7 +147,7 @@ class Editor extends React.Component {
 
 
 					<div className="flex flex-col m-2 ">
-						<span className="font-medium">Icon</span>
+						<span className="font-medium">图标</span>
 						<Select value={this.state.icon}
 							onChange={(selectedOption) => this.setState({ icon: selectedOption })}
 							options={this.state.devIconOptions}
@@ -171,46 +171,46 @@ class Editor extends React.Component {
 
 
 						<div className="flex flex-col m-2 w-1/2">
-							<span className="font-medium">Pattern</span>
+							<span className="font-medium">图案</span>
 							<select
 								onChange={(e) => this.setState({ pattern: e.target.value })}
 								className="border text-xl p-2 rounded"
 								value={this.state.pattern}>
 
-								<option>None</option>
-								<option>graph-paper</option>
-								<option>jigsaw</option>
-								<option>hideout</option>
-								<option>dots</option>
-								<option>falling-triangles</option>
-								<option>circuit-board</option>
-								<option>temple</option>
-								<option>anchors</option>
-								<option>brickwall</option>
-								<option>overlapping-circles</option>
-								<option>wiggle</option>
-								<option>tic-tac-toe</option>
-								<option>leaf</option>
-								<option>bubbles</option>
-								<option>squares</option>
-								<option>explorer</option>
-								<option>jupiter</option>
-								<option>sun</option>
+								<option>无</option>
+								<option>方格纸</option>
+								<option>拼图</option>
+								<option>隐藏</option>
+								<option>圆点</option>
+								<option>倒三角</option>
+								<option>电路板</option>
+								<option>圣殿</option>
+								<option>锚</option>
+								<option>砖墙</option>
+								<option>重叠圆</option>
+								<option>摇摆</option>
+								<option>井字棋</option>
+								<option>叶子</option>
+								<option>气泡</option>
+								<option>方格</option>
+								<option>探索者</option>
+								<option>木星</option>
+								<option>太阳</option>
 							</select>
 						</div>
 
 						<div className="flex flex-col m-2 w-1/2">
-							<span className="font-medium">Theme</span>
+							<span className="font-medium">主题</span>
 
 							<select
 								onChange={(e) => this.setState({ theme: e.target.value })}
 								value={this.state.theme}
 
 								className="text-gray-700 text-xl p-2 rounded border">
-								<option>basic</option>
-								<option>modern</option>
-								<option>outline</option>
-								<option>preview</option>
+								<option>基本</option>
+								<option>现代</option>
+								<option>大纲</option>
+								<option>预览</option>
 
 							</select>
 						</div>
@@ -220,6 +220,8 @@ class Editor extends React.Component {
 
 					<span className="text-sm mt-4  text-center text-gray-400">Made with 💖 by <a href="https://rutikwankhade.dev"
 						target="_blank" rel="noopener  noreferrer" className="underline hover:text-green-500">Rutik Wankhade</a></span>
+					<span className="text-sm mt-4  text-center text-gray-400">Translated with love by <a href="https://www.davidweng.tk/"
+						target="_blank" rel="noopener  noreferrer" className="underline hover:text-green-500">David Weng</a></span>
 
 
 
@@ -249,7 +251,7 @@ class Editor extends React.Component {
 
 				<div className="flex flex-col items-center justify-center ">
 					<div className="flex mb-4 items-center bg-white p-2 mt-2 rounded justify-center w-full">
-						<span className="mx-4 text-md font-semibold">Coverview is live on Product Hunt Today.</span>
+						<span className="mx-4 text-md font-semibold">Coverview 已在 Product Hunt 上线。</span>
 						<a href="https://www.producthunt.com/posts/coverview-2?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-coverview&#0045;2" target="_blank" rel="noreferrer"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=343671&theme=light" alt="Coverview - Creating&#0032;cover&#0032;images&#0032;for&#0032;your&#0032;blog&#0032;is&#0032;now&#0032;super&#0032;easy | Product Hunt" className="w-2/3" /></a>
 
 					</div>
