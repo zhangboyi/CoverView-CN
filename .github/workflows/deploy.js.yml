@@ -1,45 +1,23 @@
-# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
-
-name: deploy
-
-on:
-  
+name: GitHub Actions Build and Deploy Demo
+on: # 指定触发workflow的条件，这里是指定了每push一次到main分支，则触发一次
   push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
-  workflow_dispatch: # 配置 workflow_dispatch 事件，用于手动触发
-
-  
-
-jobs:
-  build:
-
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [18.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build
-        run: npm run build
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.TOKEN }}
-          publish_dir: ./build/* # 修改
-          
-          
+    branches:
+      - main
+jobs:  # workflows文件主体，可以指定一个或者多个，这里指定了一个job - build-and-deploy
+  build-and-deploy:
+    runs-on: ubuntu-latest # 在最新的ubuntu上运行
+    steps: # 指定每个job的运行步骤
+    - name: Checkout # 步骤名称
+      uses: actions/checkout@v2 # If you're using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.
+      with:
+        persist-credentials: false
+    - name: Install and Build
+      run: | # 该步骤要运行的命令，这里就是部署react 的命令
+        npm install
+        npm run-script build
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@releases/v3 # 执行一些公开的action
+      with:
+        ACCESS_TOKEN: ${{ secrets.TOKEN }} # 这里是我们刚刚创建密钥的变量名称
+        BRANCH: gh-pages
+        FOLDER: build
